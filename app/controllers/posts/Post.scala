@@ -6,9 +6,9 @@ import play.api.libs.json.{Format, Json}
   * Represents a single post
   */
 case class Post(
-               id: Int,
-               title: String,
-               body: String
+                 id: Int,
+                 title: String,
+                 body: String
                )
 
 object Post {
