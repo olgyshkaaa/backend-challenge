@@ -143,7 +143,6 @@ class PostsControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injectin
       val newPost = """{"invalidData"}"""
       val controller = new PostsController(stubControllerComponents(), mockPostsRepository, executionContext)
       val response = controller.update(1).apply(FakeRequest(PUT, "/api/v1/posts/1", FakeHeaders(Seq("Content-type" -> "application/json")), newPost))
-
       val bodyText = contentAsString(response)
 
       status(response) mustBe BAD_REQUEST
